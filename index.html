@@ -18,13 +18,42 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mukta:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+  .audio-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(243, 227, 211, 0.9);
+    border: 2px solid #d4a574;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .audio-toggle:hover {
+    background: rgba(243, 227, 211, 1);
+    transform: scale(1.1);
+  }
+
+  .audio-toggle.muted {
+    opacity: 0.6;
+  }
+</style>
 </head>
 <body>
 
 <div class="frame">
 
   <!-- Audio Toggle Button -->
-  <button id="audioToggle" class="audio-toggle" title="Toggle audio">
+  <button id="audioToggle" class="audio-toggle" title="Click to enable audio">
     <span class="audio-icon">🔊</span>
   </button>
 
@@ -32,7 +61,7 @@
   <section class="hero" aria-label="Ganpati Bappa Morya">
     <video id="heroVideo" class="hero__video"
            src="uploads/Mouse_looking_at_rotating_Ganpati_202609051306.mp4"
-           autoplay loop playsinline aria-hidden="true"></video>
+           autoplay loop muted playsinline aria-hidden="true"></video>
     <div class="hero__scrim"></div>
     <div id="heroText" class="hero__text">
       <p class="hero__mantra">गणपती बाप्पा मोरया</p>
