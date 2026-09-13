@@ -9,7 +9,7 @@
   /* --- Configuration -------------------------------------- */
   var CONFIG = {
     mapsUrl: 'https://maps.app.goo.gl/7jfrYDWzxUktWpot9',
-    invitationUrl: 'https://navneetmishragit.github.io/Ganesh-Invitation/',
+    invitationUrl: 'https://bit.ly/4xUQIcv',
     showWhatsApp: true,
     showPetals: true,
     shareMessage: 'Ganpati Bappa Morya! You and your family are cordially invited for darshan ' +
