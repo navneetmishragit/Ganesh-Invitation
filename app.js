@@ -12,8 +12,8 @@
     invitationUrl: 'https://navneetmishragit.github.io/Ganesh-Invitation/',
     showWhatsApp: true,
     showPetals: true,
-    shareMessage: 'Ganpati Bappa Morya! You and your family are invited for darshan ' +
-                  'and aarti at our home on 14 to 25 September 2026. '
+    shareMessage: 'Ganpati Bappa Morya! You and your family are cordially invited for darshan ' +
+                  'and aarti at our home from 14 to 25 September 2026. '
   };
 
   /* --- Element lookup ------------------------------------- */
