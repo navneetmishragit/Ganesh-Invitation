@@ -8,11 +8,11 @@
 
   /* --- Configuration -------------------------------------- */
   var CONFIG = {
-    mapsUrl: 'https://maps.app.goo.gl/cRY1QJZiN5nMUKr87',
+    mapsUrl: 'https://maps.app.goo.gl/7jfrYDWzxUktWpot9',
     showWhatsApp: true,
     showPetals: true,
     shareMessage: 'Ganpati Bappa Morya! You and your family are invited for darshan ' +
-                  'and aarti at our home on 14 & 15 September 2026. Directions: '
+                  'and aarti at our home on 14 to 25 September 2026. Directions: '
   };
 
   /* --- Element lookup ------------------------------------- */
