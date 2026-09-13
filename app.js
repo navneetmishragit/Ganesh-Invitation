@@ -9,10 +9,11 @@
   /* --- Configuration -------------------------------------- */
   var CONFIG = {
     mapsUrl: 'https://maps.app.goo.gl/7jfrYDWzxUktWpot9',
+    invitationUrl: 'https://navneetmishragit.github.io/Ganesh-Invitation/',
     showWhatsApp: true,
     showPetals: true,
     shareMessage: 'Ganpati Bappa Morya! You and your family are invited for darshan ' +
-                  'and aarti at our home on 14 to 25 September 2026. Directions: '
+                  'and aarti at our home on 14 to 25 September 2026. '
   };
 
   /* --- Element lookup ------------------------------------- */
@@ -153,7 +154,7 @@
   }
 
   function shareOnWhatsApp() {
-    var text = CONFIG.shareMessage + CONFIG.mapsUrl;
+    var text = CONFIG.shareMessage + CONFIG.invitationUrl;
     window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank', 'noopener');
   }
 
