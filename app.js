@@ -21,7 +21,7 @@
   ['heroVideo', 'heroText', 'sec2', 'sec3', 'garlandL', 'garlandR',
    'bell1', 'bell2', 'bell3', 'bell4', 'diyaL', 'diyaR',
    'invite', 'card', 'cardRegion', 'mouse', 'bubble',
-   'petals', 'shareBtn', 'mapBtn'].forEach(function (id) {
+   'petals', 'shareBtn', 'mapBtn', 'audioToggle', 'bgAudio'].forEach(function (id) {
     el[id] = document.getElementById(id);
   });
 
@@ -148,6 +148,44 @@
     kickVideo();
   }
 
+  /* --- Audio Control --------------------------------------- */
+  var audioEnabled = localStorage.getItem('audioEnabled') === 'true';
+
+  function updateAudioUI() {
+    if (el.audioToggle) {
+      if (audioEnabled) {
+        el.audioToggle.classList.remove('muted');
+        el.audioToggle.title = 'Click to disable audio';
+      } else {
+        el.audioToggle.classList.add('muted');
+        el.audioToggle.title = 'Click to enable audio';
+      }
+    }
+  }
+
+  function toggleAudio() {
+    var audio = el.bgAudio;
+    if (!audio) return;
+
+    audioEnabled = !audioEnabled;
+    localStorage.setItem('audioEnabled', audioEnabled);
+
+    if (audioEnabled) {
+      var playPromise = audio.play();
+      if (playPromise && playPromise.catch) {
+        playPromise.catch(function (error) {
+          console.log('Audio play failed:', error);
+          audioEnabled = false;
+          localStorage.setItem('audioEnabled', false);
+        });
+      }
+    } else {
+      audio.pause();
+    }
+
+    updateAudioUI();
+  }
+
   /* --- Interactions --------------------------------------- */
   function openMap() {
     window.open(CONFIG.mapsUrl, '_blank', 'noopener');
@@ -166,6 +204,10 @@
       el.shareBtn.addEventListener('click', shareOnWhatsApp);
     }
     if (el.mapBtn) el.mapBtn.addEventListener('click', openMap);
+    if (el.audioToggle) {
+      el.audioToggle.addEventListener('click', toggleAudio);
+      updateAudioUI();
+    }
 
     document.addEventListener('scroll', tick, { passive: true, capture: true });
     window.addEventListener('resize', tick);
